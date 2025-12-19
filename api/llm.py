@@ -5,6 +5,7 @@ Handles LLM calls for transcript → JSON conversion.
 """
 
 import json
+import os
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -87,9 +88,93 @@ def build_repair_prompt(bad_json: Dict, errors: list[str]) -> str:
     return prompt
 
 
+def call_openai_api(prompt: str, model: str = "gpt-4o-mini") -> str:
+    """
+    Call OpenAI API with prompt.
+    
+    Args:
+        prompt: Prompt text
+        model: Model name (default: gpt-4o-mini)
+        
+    Returns:
+        LLM response text
+        
+    Raises:
+        ValueError: If API call fails
+    """
+    try:
+        from openai import OpenAI
+        
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY not set")
+        
+        client = OpenAI(api_key=api_key)
+        
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that extracts structured incident data from voice transcripts. Always return valid JSON only."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.3,
+            max_tokens=2000
+        )
+        
+        return response.choices[0].message.content.strip()
+        
+    except ImportError:
+        raise NotImplementedError("OpenAI library not installed. Install with: pip install openai")
+    except Exception as e:
+        raise ValueError(f"OpenAI API error: {str(e)}")
+
+
+def call_anthropic_api(prompt: str, model: str = "claude-3-haiku-20240307") -> str:
+    """
+    Call Anthropic API with prompt.
+    
+    Args:
+        prompt: Prompt text
+        model: Model name (default: claude-3-haiku-20240307)
+        
+    Returns:
+        LLM response text
+        
+    Raises:
+        ValueError: If API call fails
+    """
+    try:
+        from anthropic import Anthropic
+        
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise ValueError("ANTHROPIC_API_KEY not set")
+        
+        client = Anthropic(api_key=api_key)
+        
+        response = client.messages.create(
+            model=model,
+            max_tokens=2000,
+            temperature=0.3,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            system="You are a helpful assistant that extracts structured incident data from voice transcripts. Always return valid JSON only."
+        )
+        
+        return response.content[0].text.strip()
+        
+    except ImportError:
+        raise NotImplementedError("Anthropic library not installed. Install with: pip install anthropic")
+    except Exception as e:
+        raise ValueError(f"Anthropic API error: {str(e)}")
+
+
 def call_llm_for_incident(transcript: str, call_id: Optional[str] = None) -> Dict:
     """
     Call LLM to extract incident from transcript.
+    
+    Tries OpenAI first, then Anthropic, then raises NotImplementedError.
     
     Args:
         transcript: Raw transcript text
@@ -100,17 +185,70 @@ def call_llm_for_incident(transcript: str, call_id: Optional[str] = None) -> Dic
         
     Raises:
         ValueError: If LLM output cannot be validated even after repair
+        NotImplementedError: If no LLM API keys are configured
     """
     # Build prompt
     prompt = build_incident_prompt(transcript, call_id)
     
-    # TODO: Call actual LLM API (OpenAI, Anthropic, etc.)
-    # For now, this is a placeholder
-    # llm_response = call_llm_api(prompt)
-    # incident = json.loads(llm_response)
+    # Try OpenAI first
+    if os.getenv("OPENAI_API_KEY"):
+        try:
+            response_text = call_openai_api(prompt)
+            # Extract JSON from response (might have markdown code blocks)
+            response_text = response_text.strip()
+            if response_text.startswith("```json"):
+                response_text = response_text[7:]
+            if response_text.startswith("```"):
+                response_text = response_text[3:]
+            if response_text.endswith("```"):
+                response_text = response_text[:-3]
+            response_text = response_text.strip()
+            
+            incident = json.loads(response_text)
+            return incident
+        except (ValueError, json.JSONDecodeError) as e:
+            # If OpenAI fails, try Anthropic
+            if os.getenv("ANTHROPIC_API_KEY"):
+                try:
+                    response_text = call_anthropic_api(prompt)
+                    # Extract JSON from response
+                    response_text = response_text.strip()
+                    if response_text.startswith("```json"):
+                        response_text = response_text[7:]
+                    if response_text.startswith("```"):
+                        response_text = response_text[3:]
+                    if response_text.endswith("```"):
+                        response_text = response_text[:-3]
+                    response_text = response_text.strip()
+                    
+                    incident = json.loads(response_text)
+                    return incident
+                except (ValueError, json.JSONDecodeError):
+                    raise ValueError(f"Both OpenAI and Anthropic failed. Last error: {str(e)}")
+            else:
+                raise ValueError(f"OpenAI failed and Anthropic not configured: {str(e)}")
     
-    # Placeholder: would be replaced with actual LLM call
-    raise NotImplementedError("LLM API integration needed")
+    # Try Anthropic if OpenAI not configured
+    elif os.getenv("ANTHROPIC_API_KEY"):
+        try:
+            response_text = call_anthropic_api(prompt)
+            # Extract JSON from response
+            response_text = response_text.strip()
+            if response_text.startswith("```json"):
+                response_text = response_text[7:]
+            if response_text.startswith("```"):
+                response_text = response_text[3:]
+            if response_text.endswith("```"):
+                response_text = response_text[:-3]
+            response_text = response_text.strip()
+            
+            incident = json.loads(response_text)
+            return incident
+        except (ValueError, json.JSONDecodeError) as e:
+            raise ValueError(f"Anthropic API error: {str(e)}")
+    
+    # No API keys configured
+    raise NotImplementedError("No LLM API keys configured. Set OPENAI_API_KEY or ANTHROPIC_API_KEY environment variable.")
 
 
 def validate_and_repair(incident: Dict, max_repairs: int = 1) -> Dict:

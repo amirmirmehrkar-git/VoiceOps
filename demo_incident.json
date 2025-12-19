@@ -1,0 +1,17 @@
+{
+  "incident_id": "inc_demo_001",
+  "title": "Checkout is down (500 errors) - [REDACTED_EMAIL]",
+  "summary": "Checkout is down, 500 errors. Contact me [REDACTED_EMAIL]",
+  "category": "operational_outage",
+  "severity": "sev1",
+  "confidence": 0.85,
+  "pii": {
+    "contains_pii": true,
+    "pii_types": ["email"],
+    "redacted": true
+  },
+  "notes": {
+    "severity_reasoning": "Keywords (down/500) indicate full outage impacting core flow.",
+    "category_reasoning": "Availability failure in checkout path."
+  }
+}
