@@ -1,4 +1,8 @@
-# VoiceOps
+# VoiceOps AI
+
+**Voice-first incident reporting. Production-ready by design.**
+
+VoiceOps is a voice-first platform for reporting, analyzing, and acting on operational incidents. Built for hackathons with production-grade quality.
 
 **Voice is the input. Production-grade incidents are the output.**
 
@@ -9,6 +13,33 @@ VoiceOps is an enterprise-ready voice-first incident ingestion system that trans
 VoiceOps enables teams to report incidents via voice (phone, web, mobile) and automatically converts them into structured JSON incidents ready for integration with Jira, PagerDuty, and other incident management tools.
 
 ## 🚀 Quick Start
+
+### Installation (5 minutes)
+
+```bash
+# Clone repository
+git clone https://github.com/amirmirmehrkar-git/VoiceOps.git
+cd VoiceOps
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set environment variables
+cp .env.example .env
+# Edit .env and add your API keys
+
+# Run API
+python main.py
+# or
+uvicorn main:app --reload
+```
+
+### With Docker
+
+```bash
+docker build -t voiceops-api .
+docker run -p 8000:8000 -e OPENAI_API_KEY=your-key voiceops-api
+```
 
 ### Demo Flow (90 seconds)
 
@@ -24,6 +55,27 @@ See `/demo` folder for:
 - `demo_transcript_security.txt` - Security incident example
 - `demo_transcript_outage.txt` - Outage incident example
 - `demo_flow.md` - Complete demo walkthrough
+
+### API Endpoints
+
+- `POST /api/v1/incidents` - Create incident from transcript
+- `POST /api/v1/vapi/webhook` - VAPI webhook handler
+- `POST /api/v1/incidents/validate` - Validate incident JSON
+- `GET /health` - Health check
+- `GET /docs` - Swagger UI documentation
+
+### Test API
+
+```bash
+curl -X POST http://localhost:8000/api/v1/incidents \
+  -H "Content-Type: application/json" \
+  -d '{
+    "transcript": "از ساعت ۱۸:۰۵ checkout-api توی پروداکشن ۵۰۰ می‌دهد",
+    "call_id": "test_001"
+  }'
+```
+
+**See `QUICK_START.md` for detailed setup instructions.**
 
 ## 🏗️ Architecture
 
@@ -143,6 +195,47 @@ For pilots, enterprise deals, or questions:
 - Email: [your-email]
 - Demo: [demo-link]
 
+## 🛠️ Hackathon Tools Integration
+
+VoiceOps is built with hackathon tools for production-ready quality:
+
+### 🐰 CodeRabbit
+- AI code review on all PRs
+- Security and reliability improvements
+- **Rabbit Hole prize track**
+
+### 🏄 Windsurf
+- AI coding agent for rapid development
+- Code generation and optimization
+
+### 🏖️ Daytona
+- Fast deployment and cloud dev environment
+- **Daytona Compute Track prize**
+
+### 📞 VAPI
+- Voice AI integration
+- Real-time voice-to-text conversion
+- 4-question structured intake
+
+**See `HACKATHON_TOOLS_GUIDE.md` for detailed setup instructions.**
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run specific test file
+pytest tests/test_incident_table.py -v
+```
+
+## 📚 Documentation
+
+- **Quick Start**: `QUICK_START.md`
+- **Hackathon Tools**: `HACKATHON_TOOLS_GUIDE.md`
+- **Architecture**: `ARCHITECTURE.md`
+- **API Docs**: `http://localhost:8000/docs` (Swagger UI)
+
 ## 🎯 Universal Tagline
 
 **"Voice is the input. Production-grade incidents are the output."**
@@ -151,8 +244,10 @@ For pilots, enterprise deals, or questions:
 
 ## 🚦 Status
 
-✅ Hackathon-ready
-✅ Pilot-ready
-✅ Enterprise-ready
-✅ Revenue-ready
+✅ Hackathon-ready  
+✅ Pilot-ready  
+✅ Enterprise-ready  
+✅ Revenue-ready  
+✅ CodeRabbit verified  
+✅ Production-ready code quality
 
