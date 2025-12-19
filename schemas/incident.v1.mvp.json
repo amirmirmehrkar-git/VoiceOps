@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "incident.v1.json",
+  "title": "Incident",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["incident_id", "title", "summary", "category", "severity", "confidence", "pii"],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 2000
+    },
+    "category": {
+      "type": "string",
+      "enum": ["operational_outage", "performance_degradation", "security_incident", "data_issue", "unknown"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["sev1", "sev2", "sev3", "sev4"]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pii": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contains_pii", "pii_types", "redacted"],
+      "properties": {
+        "contains_pii": {
+          "type": "boolean"
+        },
+        "pii_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redacted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "severity_reasoning": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "category_reasoning": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    }
+  }
+}
+

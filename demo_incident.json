@@ -1,40 +1,17 @@
 {
-  "schema_version": "1.0.0",
-  "incident_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "source": {
-    "channel": "voice",
-    "vendor": "vapi",
-    "call_id": "call_demo_001"
-  },
-  "occurred_at": "2025-01-12T18:42:00Z",
-  "reported_at": "2025-01-12T18:43:15Z",
-  "timezone": "Europe/Berlin",
-  "title": "Suspicious login and possible token leak detected",
-  "summary": "User reported unexpected login alerts and access from an unknown IP address. Potential token leak suspected. Immediate security review required.",
-  "category": "security_incident",
+  "incident_id": "inc_demo_001",
+  "title": "Checkout is down (500 errors) - [REDACTED_EMAIL]",
+  "summary": "Checkout is down, 500 errors. Contact me [REDACTED_EMAIL]",
+  "category": "operational_outage",
   "severity": "sev1",
-  "status": "new",
-  "location": {
-    "site": "unknown"
-  },
-  "systems": [
-    {
-      "name": "authentication-service",
-      "component": "token-validation",
-      "environment": "prod"
-    }
-  ],
-  "impact": {
-    "users_affected_estimate": 0
-  },
-  "evidence": {
-    "error_codes": []
-  },
-  "tags": ["security", "authentication", "suspicious_login"],
+  "confidence": 0.85,
   "pii": {
     "contains_pii": true,
-    "redaction_applied": true
+    "pii_types": ["email"],
+    "redacted": true
   },
-  "confidence": 0.92
+  "notes": {
+    "severity_reasoning": "Keywords (down/500) indicate full outage impacting core flow.",
+    "category_reasoning": "Availability failure in checkout path."
+  }
 }
-
