@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceOps AI - Voice-First Incident Reporting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">VoiceOps AI</span>
+                </h1>
+                <p class="hero-subtitle">
+                    پلتفرم Voice-First برای ثبت، تحلیل و اقدام روی رخدادهای حساس عملیاتی
+                </p>
+                <p class="hero-description">
+                    هر چیزی که "الان باید گزارش شود" ولی وقت تایپ ندارد.
+                </p>
+                <div class="hero-badge">
+                    <span class="badge">🎯 Production-Ready</span>
+                    <span class="badge">🔒 Security-First</span>
+                    <span class="badge">🐰 CodeRabbit Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story -->
+    <section class="origin">
+        <div class="container">
+            <h2 class="section-title">ایده از کجا آمد؟</h2>
+            <div class="origin-grid">
+                <div class="origin-card">
+                    <div class="icon">🏥</div>
+                    <h3>صنایع حساس</h3>
+                    <p>بیمارستان‌ها، کارخانه‌ها، تیم‌های DevOps</p>
+                </div>
+                <div class="origin-card">
+                    <div class="icon">⏰</div>
+                    <h3>نیازهای نگران‌کننده</h3>
+                    <p>رخدادهایی که باید فوری گزارش شوند</p>
+                </div>
+                <div class="origin-card">
+                    <div class="icon">📝</div>
+                    <h3>معضلات روزمره</h3>
+                    <p>فرم‌های پیچیده، وقت تایپ نداریم، گزارش‌ها ناقص</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">مشکل واقعی</h2>
+            <div class="problem-content">
+                <div class="problem-card">
+                    <h3>در بیمارستان‌ها، کارخانه‌ها، تیم‌های DevOps:</h3>
+                    <ul class="problem-list">
+                        <li>❌ گزارش Incidentها دستی، دیر و ناقص است</li>
+                        <li>❌ اپراتور یا پرستار وقت نوشتن فرم ندارد</li>
+                        <li>❌ Severity اشتباه تشخیص داده می‌شود</li>
+                        <li>❌ Response time کند است</li>
+                        <li>❌ داده‌ها ساختارنیافته و غیرقابل استفاده</li>
+                    </ul>
+                    <div class="quote">
+                        <p>"Typing fails when time matters most."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">راه‌حل: VoiceOps AI</h2>
+            <div class="solution-intro">
+                <p class="solution-description">
+                    یک Voice Agent با VAPI که کاربر فقط صحبت می‌کند و Agent:
+                </p>
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="flow-icon">🎤</div>
+                        <p>صدا → متن</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🧠</div>
+                        <p>ساختاردهی Incident</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">✅</div>
+                        <p>ثبت در سیستم</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">۵ ایده کاربردی</h2>
+            <div class="use-cases-grid">
+                <!-- Use Case 1 -->
+                <div class="use-case-card featured">
+                    <div class="use-case-header">
+                        <span class="use-case-badge gold">🥇</span>
+                        <h3>Voice Incident Reporter</h3>
+                        <p class="use-case-industry">DevOps / Healthcare</p>
+                    </div>
+                    <div class="use-case-content">
+                        <p class="use-case-example">
+                            <strong>مثال:</strong> «دستگاه MRI ساعت ۱۰ خطای X داد»
+                        </p>
+                        <div class="use-case-output">
+                            <strong>خروجی:</strong>
+                            <ul>
+                                <li>JSON ساختاریافته</li>
+                                <li>Severity خودکار (sev1-sev4)</li>
+                                <li>ثبت در Ticket System</li>
+                            </ul>
+                        </div>
+                        <div class="use-case-integration">
+                            <strong>قابل توسعه به:</strong>
+                            <div class="integration-tags">
+                                <span>PagerDuty</span>
+                                <span>Jira</span>
+                                <span>سیستم‌های بیمارستانی</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 2 -->
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <span class="use-case-badge silver">🥈</span>
+                        <h3>Voice Quality Inspector</h3>
+                        <p class="use-case-industry">Manufacturing / Factory</p>
+                    </div>
+                    <div class="use-case-content">
+                        <p class="use-case-example">
+                            <strong>مثال:</strong> «محصول سری A ترک ریز دارد، شدت متوسط»
+                        </p>
+                        <div class="use-case-output">
+                            <strong>خروجی:</strong>
+                            <ul>
+                                <li>داده استاندارد</li>
+                                <li>Severity خودکار</li>
+                                <li>گزارش تولید</li>
+                            </ul>
+                        </div>
+                        <div class="use-case-integration">
+                            <strong>قابل توسعه به:</strong>
+                            <div class="integration-tags">
+                                <span>ERP</span>
+                                <span>داشبورد کیفیت</span>
+                                <span>مدل پیش‌بینی</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 3 -->
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <span class="use-case-badge bronze">🥉</span>
+                        <h3>Voice Compliance Assistant</h3>
+                        <p class="use-case-industry">Financial / Legal / Health</p>
+                    </div>
+                    <div class="use-case-content">
+                        <p class="use-case-example">
+                            <strong>مثال:</strong> «آیا این تماس نیاز به consent دارد؟»
+                        </p>
+                        <div class="use-case-output">
+                            <strong>خروجی:</strong>
+                            <ul>
+                                <li>جواب کوتاه</li>
+                                <li>هشدار ریسک</li>
+                                <li>ثبت لاگ مکالمه</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 4 -->
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <span class="use-case-badge">🧠</span>
+                        <h3>Voice Safety Logger</h3>
+                        <p class="use-case-industry">Construction / Safety</p>
+                    </div>
+                    <div class="use-case-content">
+                        <p class="use-case-example">
+                            <strong>مثال:</strong> «کابل برق لخت کنار در ورودی»
+                        </p>
+                        <div class="use-case-output">
+                            <strong>خروجی:</strong>
+                            <ul>
+                                <li>لوکیشن</li>
+                                <li>سطح خطر</li>
+                                <li>ثبت فوری</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 5 -->
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <span class="use-case-badge">🤝</span>
+                        <h3>Voice Customer Escalation Filter</h3>
+                        <p class="use-case-industry">Customer Support</p>
+                    </div>
+                    <div class="use-case-content">
+                        <p class="use-case-example">
+                            <strong>مثال:</strong> تشخیص تماس‌های خشمگین و فوری
+                        </p>
+                        <div class="use-case-output">
+                            <strong>خروجی:</strong>
+                            <ul>
+                                <li>تشخیص تن صدا</li>
+                                <li>تشخیص فوریت</li>
+                                <li>برچسب‌گذاری تماس</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CodeRabbit Section -->
+    <section class="coderabbit">
+        <div class="container">
+            <h2 class="section-title">نقش CodeRabbit 🐰</h2>
+            <div class="coderabbit-content">
+                <div class="coderabbit-intro">
+                    <p class="coderabbit-description">
+                        CodeRabbit روی PRها بررسی می‌کند و کیفیت Production را تضمین می‌کند:
+                    </p>
+                </div>
+                <div class="coderabbit-grid">
+                    <div class="coderabbit-card">
+                        <div class="coderabbit-icon">🔒</div>
+                        <h3>بررسی امنیت</h3>
+                        <ul>
+                            <li>PII / HIPAA-like compliance</li>
+                            <li>Data minimization</li>
+                            <li>Security vulnerabilities</li>
+                        </ul>
+                    </div>
+                    <div class="coderabbit-card">
+                        <div class="coderabbit-icon">⚡</div>
+                        <h3>بررسی Reliability</h3>
+                        <ul>
+                            <li>Retry / error handling</li>
+                            <li>Fault tolerance</li>
+                            <li>Idempotency checks</li>
+                        </ul>
+                    </div>
+                    <div class="coderabbit-card">
+                        <div class="coderabbit-icon">🧪</div>
+                        <h3>پیشنهاد Test</h3>
+                        <ul>
+                            <li>Failure cases</li>
+                            <li>Edge cases</li>
+                            <li>Table-driven tests</li>
+                        </ul>
+                    </div>
+                    <div class="coderabbit-card">
+                        <div class="coderabbit-icon">📋</div>
+                        <h3>Schema Validation</h3>
+                        <ul>
+                            <li>Strict JSON Schema</li>
+                            <li>Data consistency</li>
+                            <li>Type safety</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="coderabbit-impact">
+                    <h3>چرا داورها دوست دارند؟</h3>
+                    <div class="impact-grid">
+                        <div class="impact-item">
+                            <span class="impact-icon">🎤</span>
+                            <p>Voice = wow factor</p>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🏭</span>
+                            <p>Production use case واقعی</p>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🔗</span>
+                            <p>قابل توسعه به سیستم‌های دیگر</p>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🏆</span>
+                            <p>شانس بالا برای Most Impressive + Daytona + Rabbit Hole</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Core -->
+    <section class="technical-core">
+        <div class="container">
+            <h2 class="section-title">هسته فنی مشترک</h2>
+            <p class="section-subtitle">همه بردها/ماژول‌ها از این Core استفاده می‌کنند:</p>
+            <div class="core-architecture">
+                <div class="core-layer">
+                    <div class="layer-icon">🔊</div>
+                    <h3>VAPI (ورودی)</h3>
+                    <ul>
+                        <li>دریافت Voice</li>
+                        <li>تشخیص Intent</li>
+                        <li>تبدیل به متن ساختاریافته</li>
+                    </ul>
+                </div>
+                <div class="core-arrow">→</div>
+                <div class="core-layer">
+                    <div class="layer-icon">🧠</div>
+                    <h3>AI Layer</h3>
+                    <ul>
+                        <li>Classification</li>
+                        <li>Risk / Severity Scoring</li>
+                        <li>Normalization</li>
+                    </ul>
+                </div>
+                <div class="core-arrow">→</div>
+                <div class="core-layer">
+                    <div class="layer-icon">🐰</div>
+                    <h3>CodeRabbit (کیفیت)</h3>
+                    <ul>
+                        <li>Review امنیتی</li>
+                        <li>Enforce schema</li>
+                        <li>پیشنهاد Test Case</li>
+                        <li>جلوگیری از technical debt</li>
+                    </ul>
+                </div>
+                <div class="core-arrow">→</div>
+                <div class="core-layer">
+                    <div class="layer-icon">🧱</div>
+                    <h3>Output Layer</h3>
+                    <ul>
+                        <li>JSON</li>
+                        <li>Ticket</li>
+                        <li>Log</li>
+                        <li>Webhook</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Flow Section -->
+    <section class="process-flow">
+        <div class="container">
+            <h2 class="section-title">فرآیند کار</h2>
+            <div class="flow-container">
+                <div class="flow-step-card">
+                    <div class="flow-number">1</div>
+                    <div class="flow-icon-large">🎤</div>
+                    <h3>VAPI Voice Call</h3>
+                    <p>کاربر تماس می‌گیرد و صحبت می‌کند</p>
+                </div>
+                <div class="flow-arrow-large">↓</div>
+                <div class="flow-step-card">
+                    <div class="flow-number">2</div>
+                    <div class="flow-icon-large">🧠</div>
+                    <h3>Intent + STT</h3>
+                    <p>تشخیص Intent و تبدیل صدا به متن</p>
+                </div>
+                <div class="flow-arrow-large">↓</div>
+                <div class="flow-step-card">
+                    <div class="flow-number">3</div>
+                    <div class="flow-icon-large">🔧</div>
+                    <h3>Incident Structuring (LLM)</h3>
+                    <p>ساختاردهی Incident با LLM</p>
+                </div>
+                <div class="flow-arrow-large">↓</div>
+                <div class="flow-step-card">
+                    <div class="flow-number">4</div>
+                    <div class="flow-icon-large">⚡</div>
+                    <h3>Severity Scoring</h3>
+                    <p>تعیین Severity با قوانین Deterministic</p>
+                </div>
+                <div class="flow-arrow-large">↓</div>
+                <div class="flow-step-card">
+                    <div class="flow-number">5</div>
+                    <div class="flow-icon-large">📡</div>
+                    <h3>Incident API</h3>
+                    <p>ارسال به Incident API</p>
+                </div>
+                <div class="flow-arrow-large">↓</div>
+                <div class="flow-step-card">
+                    <div class="flow-number">6</div>
+                    <div class="flow-icon-large">📄</div>
+                    <h3>JSON / Ticket / Log</h3>
+                    <p>خروجی نهایی: JSON، Ticket، Log</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Deep Dive -->
+    <section class="technical-deep-dive">
+        <div class="container">
+            <h2 class="section-title">جزئیات فنی</h2>
+            
+            <!-- Strict JSON Schema -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">📋</div>
+                    <h3>Strict Incident JSON Schema Strategy</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="tech-feature">
+                        <h4>JSON Schema 2020-12</h4>
+                        <p>استفاده از آخرین استاندارد JSON Schema برای validation دقیق</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h4>additionalProperties: false</h4>
+                        <p>جلوگیری از فیلدهای اضافی در همه سطوح (root + nested objects)</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h4>Required Fields Enforcement</h4>
+                        <p>12 فیلد اجباری: schema_version, source, occurred_at, reported_at, title, category, severity, status, location, systems, summary, confidence</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h4>Enum Strictness</h4>
+                        <p>محدودیت دقیق برای: category (8 نوع), severity (sev1-sev4), status (4 حالت)</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h4>Idempotency via call_id</h4>
+                        <p>جلوگیری از duplicate incidents با استفاده از call_id</p>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/blob/main/schemas/incident.v1.json" target="_blank" class="tech-link">
+                        مشاهده Schema کامل →
+                    </a>
+                </div>
+            </div>
+
+            <!-- VAPI Agent Prompt -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">🎤</div>
+                    <h3>VAPI Agent Prompt (Direct Schema Output)</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="prompt-preview">
+                        <h4>4 سؤال دقیق:</h4>
+                        <ol class="prompt-questions">
+                            <li><strong>Q1:</strong> چه اتفاقی افتاده یا چه چیزی خراب شده؟</li>
+                            <li><strong>Q2:</strong> کدام سیستم یا دستگاه درگیر است و کجا؟</li>
+                            <li><strong>Q3:</strong> این مشکل از چه زمانی شروع شده؟</li>
+                            <li><strong>Q4:</strong> اثر مشکل چقدر است؟ (1-4)</li>
+                        </ol>
+                        <div class="prompt-output">
+                            <h4>خروجی مستقیم:</h4>
+                            <p>بعد از 4 سؤال، Agent مستقیماً JSON معتبر برمی‌گرداند (بدون markdown، بدون توضیح)</p>
+                        </div>
+                        <div class="prompt-features">
+                            <span class="feature-tag">PII Redaction</span>
+                            <span class="feature-tag">Persian Support</span>
+                            <span class="feature-tag">60s Max</span>
+                            <span class="feature-tag">Schema-Valid Output</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/blob/main/engineering/vapi_agent_prompt_4questions.txt" target="_blank" class="tech-link">
+                        مشاهده Prompt کامل →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Severity Rules -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Severity Rules (Deterministic, Auditable)</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="severity-rules">
+                        <div class="severity-rule-card sev1">
+                            <h4>sev1 (Critical)</h4>
+                            <ul>
+                                <li>Keywords: "down", "outage", "500", "emergency", "patient at risk"</li>
+                                <li>services_down == true</li>
+                                <li>category in {security_incident, patient_safety}</li>
+                            </ul>
+                        </div>
+                        <div class="severity-rule-card sev2">
+                            <h4>sev2 (High)</h4>
+                            <ul>
+                                <li>Severe degradation</li>
+                                <li>High user count (>100)</li>
+                                <li>Difficult workaround</li>
+                            </ul>
+                        </div>
+                        <div class="severity-rule-card sev3">
+                            <h4>sev3 (Medium) - Default</h4>
+                            <ul>
+                                <li>Default for ambiguous cases</li>
+                                <li>Moderate impact</li>
+                            </ul>
+                        </div>
+                        <div class="severity-rule-card sev4">
+                            <h4>sev4 (Low)</h4>
+                            <ul>
+                                <li>Minor, cosmetic issues</li>
+                                <li>Low impact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="severity-note">
+                        <p><strong>مهم:</strong> Severity با قوانین Rule-based تعیین می‌شود، نه AI guessing. همه تصمیم‌ها Auditable هستند.</p>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/blob/main/engineering/severity_rules.md" target="_blank" class="tech-link">
+                        مشاهده قوانین کامل →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Demo Scenarios -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">🎬</div>
+                    <h3>Incident Transcripts + Schema-Valid Outputs</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="demo-scenarios">
+                        <div class="demo-scenario-card">
+                            <h4>Scenario 1: Clear Outage (sev1)</h4>
+                            <div class="demo-transcript">
+                                <strong>Transcript:</strong> "از ساعت ۱۸:۰۵ بعد از دیپلوی جدید، checkout-api توی پروداکشن ۵۰۰ می‌دهد..."
+                            </div>
+                            <div class="demo-output">
+                                <strong>Output:</strong> JSON با severity="sev1", category="service_outage", services_down=true
+                            </div>
+                        </div>
+                        <div class="demo-scenario-card">
+                            <h4>Scenario 2: Ambiguous (sev3)</h4>
+                            <div class="demo-transcript">
+                                <strong>Transcript:</strong> "یه مشکلی هست… بعضی وقتا سیستم کند می‌شه..."
+                            </div>
+                            <div class="demo-output">
+                                <strong>Output:</strong> JSON با severity="sev3" (default), category="performance_degradation"
+                            </div>
+                        </div>
+                        <div class="demo-scenario-card">
+                            <h4>Scenario 3: PII Redaction (sev1)</h4>
+                            <div class="demo-transcript">
+                                <strong>Transcript:</strong> "من علی رضایی هستم، شماره‌ام ۰۹۱۲۳۴۵۶۷۸۹..."
+                            </div>
+                            <div class="demo-output">
+                                <strong>Output:</strong> JSON با pii.contains_pii=true, pii.redaction_applied=true, نام‌ها [REDACTED]
+                            </div>
+                        </div>
+                        <div class="demo-scenario-card">
+                            <h4>Scenario 4: Security Incident (sev1)</h4>
+                            <div class="demo-transcript">
+                                <strong>Transcript:</strong> "یک لاگین مشکوک شناسایی شد..."
+                            </div>
+                            <div class="demo-output">
+                                <strong>Output:</strong> JSON با severity="sev1", category="security_incident"
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/tree/main/demo" target="_blank" class="tech-link">
+                        مشاهده همه Demo Scenarios →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Webhook Payloads -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">🔗</div>
+                    <h3>Jira & PagerDuty Webhook Payloads</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="webhook-payloads">
+                        <div class="webhook-card">
+                            <h4>Jira Integration</h4>
+                            <div class="code-snippet">
+                                <pre><code>{
+  "fields": {
+    "project": {"key": "VO"},
+    "summary": "{{incident.title}}",
+    "description": "{{incident.description}}",
+    "issuetype": {"name": "Incident"},
+    "priority": {"name": "{{incident.priority}}"},
+    "labels": {{incident.tags}}
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="webhook-card">
+                            <h4>PagerDuty Integration</h4>
+                            <div class="code-snippet">
+                                <pre><code>{
+  "routing_key": "YOUR_KEY",
+  "event_action": "trigger",
+  "dedup_key": "{{incident.incident_id}}",
+  "payload": {
+    "summary": "{{incident.title}}",
+    "severity": "{{incident.severity}}",
+    "source": "VoiceOps"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/tree/main/engineering" target="_blank" class="tech-link">
+                        مشاهده Webhook Payloads کامل →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Demo Checklist -->
+            <div class="tech-section">
+                <div class="tech-header">
+                    <div class="tech-icon">✅</div>
+                    <h3>Demo Repository Checklist</h3>
+                </div>
+                <div class="tech-content">
+                    <div class="checklist-grid">
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Strict JSON Schema (additionalProperties: false)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Schema Validation (enforced before storage)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Deterministic Severity Rules</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>PII Redaction Logic</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Idempotency via call_id</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Fallback for Invalid LLM Output</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>Table-Driven Tests</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✅</span>
+                            <span>CodeRabbit PR Proof</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps/blob/main/demo/demo_repo_checklist.md" target="_blank" class="tech-link">
+                        مشاهده Checklist کامل →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outputs Section -->
+    <section class="outputs">
+        <div class="container">
+            <h2 class="section-title">خروجی‌ها</h2>
+            <div class="outputs-grid">
+                <div class="output-card">
+                    <div class="output-icon">📄</div>
+                    <h3>JSON ساختاریافته</h3>
+                    <p>Schema-valid incident reports</p>
+                    <code class="output-code">incident.v1.json</code>
+                </div>
+                <div class="output-card">
+                    <div class="output-icon">🎫</div>
+                    <h3>Ticket Systems</h3>
+                    <p>Jira, PagerDuty, ServiceNow</p>
+                </div>
+                <div class="output-card">
+                    <div class="output-icon">📊</div>
+                    <h3>Logs & Analytics</h3>
+                    <p>Structured logging for analysis</p>
+                </div>
+                <div class="output-card">
+                    <div class="output-icon">🔗</div>
+                    <h3>Webhooks</h3>
+                    <p>Real-time integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repository Structure -->
+    <section class="repo-structure">
+        <div class="container">
+            <h2 class="section-title">ساختار Repository</h2>
+            <p class="section-subtitle">ساختار حرفه‌ای و Production-Ready برای قضاوت داوران</p>
+            <div class="structure-container">
+                <div class="structure-tree">
+                    <div class="tree-item root">
+                        <span class="tree-icon">📁</span>
+                        <span class="tree-name">VoiceOps/</span>
+                    </div>
+                    
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">api/</span>
+                            <span class="tree-desc">Core API code</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">🐍</span>
+                                <span class="tree-name">incident.py</span>
+                                <span class="tree-desc">Incident creation & processing</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">🐍</span>
+                                <span class="tree-name">scoring.py</span>
+                                <span class="tree-desc">Confidence & severity calculation</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">🐍</span>
+                                <span class="tree-name">schema.py</span>
+                                <span class="tree-desc">Schema validation</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">🐍</span>
+                                <span class="tree-name">llm.py</span>
+                                <span class="tree-desc">LLM integration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">tests/</span>
+                            <span class="tree-desc">Test files</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">🧪</span>
+                                <span class="tree-name">test_incident_table.py</span>
+                                <span class="tree-desc">Table-driven tests</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">schemas/</span>
+                            <span class="tree-desc">JSON schemas for validation</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">📋</span>
+                                <span class="tree-name">incident.v1.json</span>
+                                <span class="tree-desc">Strict JSON Schema 2020-12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">prompts/</span>
+                            <span class="tree-desc">LLM prompts</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">📝</span>
+                                <span class="tree-name">incident_prompt.txt</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">📝</span>
+                                <span class="tree-name">incident_schema_summary.txt</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">📝</span>
+                                <span class="tree-name">repair_prompt.txt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">demo/</span>
+                            <span class="tree-desc">Demo materials and examples</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">🎬</span>
+                                <span class="tree-name">demo_scenarios.md</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">📄</span>
+                                <span class="tree-name">demo_scenario_*.json</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">engineering/</span>
+                            <span class="tree-desc">Technical documentation</span>
+                        </div>
+                        <div class="tree-children">
+                            <div class="tree-item file">
+                                <span class="tree-icon">📚</span>
+                                <span class="tree-name">vapi_agent_prompt_4questions.txt</span>
+                            </div>
+                            <div class="tree-item file">
+                                <span class="tree-icon">📚</span>
+                                <span class="tree-name">severity_rules.md</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">coderabbit/</span>
+                            <span class="tree-desc">CodeRabbit integration docs</span>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">legal/</span>
+                            <span class="tree-desc">Legal documents (export to PDF)</span>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">security_compliance/</span>
+                            <span class="tree-desc">Security & compliance docs</span>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item folder">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">sales/</span>
+                            <span class="tree-desc">Sales materials & pricing</span>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item file">
+                            <span class="tree-icon">📖</span>
+                            <span class="tree-name">README.md</span>
+                            <span class="tree-desc">Main documentation</span>
+                        </div>
+                    </div>
+
+                    <div class="tree-branch">
+                        <div class="tree-item file">
+                            <span class="tree-icon">🏗️</span>
+                            <span class="tree-name">ARCHITECTURE.md</span>
+                            <span class="tree-desc">Architecture documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="structure-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">✅</div>
+                    <h4>Production-Ready Structure</h4>
+                    <p>ساختار حرفه‌ای با جداسازی منطقی کد، تست، و مستندات</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🔒</div>
+                    <h4>Security & Compliance</h4>
+                    <p>مستندات کامل امنیت و compliance برای Enterprise</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">📚</div>
+                    <h4>Complete Documentation</h4>
+                    <p>مستندات کامل از Engineering تا Sales</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎬</div>
+                    <h4>Demo Ready</h4>
+                    <p>Demo scenarios و examples آماده برای قضاوت</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations">
+        <div class="container">
+            <h2 class="section-title">اینترگراسیون با زیرساخت‌های دیگر</h2>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-logo">🚨</div>
+                    <h3>PagerDuty</h3>
+                    <p>Incident escalation</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">📋</div>
+                    <h3>Jira</h3>
+                    <p>Ticket creation</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">🏥</div>
+                    <h3>سیستم‌های بیمارستانی</h3>
+                    <p>Healthcare integration</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">📊</div>
+                    <h3>SIEM</h3>
+                    <p>Security monitoring</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">🏭</div>
+                    <h3>ERP</h3>
+                    <p>Manufacturing systems</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">📈</div>
+                    <h3>Analytics Dashboards</h3>
+                    <p>Real-time insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">آماده برای Production</h2>
+                <p class="cta-description">
+                    VoiceOps با CodeRabbit review شده و آماده استفاده در محیط Production است.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/amirmirmehrkar-git/VoiceOps" class="btn btn-primary" target="_blank">
+                        مشاهده Repository
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        مشاهده Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 VoiceOps AI. Built for Hackathon.</p>
+            <p class="footer-tagline">
+                "We fix the first incident report — everything downstream depends on it."
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

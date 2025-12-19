@@ -1,0 +1,257 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Show MVP Output in Browser
+
+Creates an HTML file with the latest test output.
+"""
+
+import sys
+import json
+import os
+from pathlib import Path
+
+# Set UTF-8 encoding
+if sys.platform == 'win32':
+    os.environ['PYTHONIOENCODING'] = 'utf-8'
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+from api.incident import create_incident_from_transcript
+from api.schema import validate_incident_strict
+
+def create_html_output():
+    """Create HTML file with output."""
+    # Test transcript
+    transcript = "از ساعت ۱۸:۰۵ بعد از دیپلوی جدید، checkout-api توی پروداکشن ۵۰۰ می‌دهد. مشتری‌ها نمی‌تونن پرداخت کنن."
+    call_id = "demo_001"
+    
+    try:
+        # Create incident
+        incident = create_incident_from_transcript(
+            transcript=transcript,
+            call_id=call_id,
+            timezone="Europe/Berlin"
+        )
+        
+        # Validate
+        validate_incident_strict(incident)
+        
+        # Format JSON
+        json_output = json.dumps(incident, indent=2, ensure_ascii=False)
+        
+        # Get severity class
+        severity_num = incident.get('severity', 'sev3')[-1]
+        
+        # Create HTML
+        html = f"""<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceOps MVP - خروجی JSON</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }}
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }}
+        h1 {{
+            color: #6366f1;
+            border-bottom: 4px solid #6366f1;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }}
+        .status {{
+            background: #d1fae5;
+            color: #065f46;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }}
+        .section {{
+            margin: 30px 0;
+        }}
+        .section h2 {{
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }}
+        .transcript-box {{
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 5px solid #6366f1;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #374151;
+        }}
+        .key-fields {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }}
+        .field-card {{
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #6366f1;
+            transition: transform 0.3s ease;
+        }}
+        .field-card:hover {{
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }}
+        .field-label {{
+            font-weight: bold;
+            color: #64748b;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }}
+        .field-value {{
+            color: #1e293b;
+            font-size: 1.5em;
+            font-weight: 600;
+        }}
+        .badge {{
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }}
+        .sev1 {{ background: #fee2e2; color: #991b1b; }}
+        .sev2 {{ background: #fef3c7; color: #92400e; }}
+        .sev3 {{ background: #dbeafe; color: #1e40af; }}
+        .sev4 {{ background: #f3f4f6; color: #374151; }}
+        .json-container {{
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 20px 0;
+        }}
+        .json-container pre {{
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }}
+        .copy-btn {{
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }}
+        .copy-btn:hover {{
+            background: #4f46e5;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 VoiceOps MVP - خروجی JSON</h1>
+        
+        <div class="status">
+            ✅ Incident created successfully! Schema validation passed!
+        </div>
+        
+        <div class="section">
+            <h2>📝 Transcript (ورودی)</h2>
+            <div class="transcript-box">
+                {transcript}
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 فیلدهای کلیدی</h2>
+            <div class="key-fields">
+                <div class="field-card">
+                    <div class="field-label">Category</div>
+                    <div class="field-value">{incident.get('category', 'N/A')}</div>
+                </div>
+                <div class="field-card">
+                    <div class="field-label">Severity</div>
+                    <div class="field-value">
+                        <span class="badge sev{severity_num}">{incident.get('severity', 'N/A')}</span>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-label">Status</div>
+                    <div class="field-value">{incident.get('status', 'N/A')}</div>
+                </div>
+                <div class="field-card">
+                    <div class="field-label">Confidence</div>
+                    <div class="field-value">{incident.get('confidence', 'N/A')}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📄 JSON Output (خروجی کامل)</h2>
+            <div class="json-container">
+                <pre id="json-output">{json_output}</pre>
+            </div>
+            <button class="copy-btn" onclick="copyJSON()">📋 کپی JSON</button>
+        </div>
+    </div>
+    
+    <script>
+        function copyJSON() {{
+            const jsonText = document.getElementById('json-output').textContent;
+            navigator.clipboard.writeText(jsonText).then(() => {{
+                alert('JSON کپی شد!');
+            }});
+        }}
+    </script>
+</body>
+</html>"""
+        
+        # Save HTML
+        output_file = Path(__file__).parent / "output.html"
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(html)
+        
+        print(f"✅ HTML file created: {output_file}")
+        print(f"📂 Open in browser: file:///{output_file.absolute()}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+if __name__ == "__main__":
+    create_html_output()
+
