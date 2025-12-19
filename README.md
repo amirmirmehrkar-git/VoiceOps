@@ -10,14 +10,14 @@ VoiceOps enables teams to report incidents via voice (phone, web, mobile) and au
 
 ## 🚀 Quick Start
 
-### Demo Flow (90 seconds)
+
 
 1. **Voice Input**: User calls or speaks incident details
 2. **AI Processing**: VAPI agent processes voice → structured JSON
 3. **Validation**: Strict schema validation ensures production-ready output
 4. **Integration**: Webhook to Jira/PagerDuty with proper severity classification
 
-### Offline Demo
+
 
 See `/demo` folder for:
 - `demo_incident.json` - Example output
@@ -110,49 +110,5 @@ VoiceOps/
 └── ARCHITECTURE.md    # Architecture documentation
 ```
 
-## 🔐 Security & Compliance
 
-- **SOC2-lite** controls documented
-- **HIPAA-aligned** positioning
-- **NIST-style** incident response mapping
-- Security FAQ and vendor questionnaire available
-
-See `/security_compliance` for details.
-
-## ⚖️ Legal
-
-All legal documents available in `/legal`:
-- Pilot Terms (non-binding)
-- Data Processing Addendum (DPA)
-- Master Service Agreement (MSA)
-- Order Form template
-
-**Export to PDF before sending to buyers.**
-
-## 💰 Pricing
-
-- **Pilot**: Free (2-3 weeks)
-- **Team**: $X/month
-- **Regulated**: Custom pricing
-
-See `/sales/pricing.md` for details.
-
-## 📞 Contact
-
-For pilots, enterprise deals, or questions:
-- Email: [your-email]
-- Demo: [demo-link]
-
-## 🎯 Universal Tagline
-
-**"Voice is the input. Production-grade incidents are the output."**
-
----
-
-## 🚦 Status
-
-✅ Hackathon-ready
-✅ Pilot-ready
-✅ Enterprise-ready
-✅ Revenue-ready
 
