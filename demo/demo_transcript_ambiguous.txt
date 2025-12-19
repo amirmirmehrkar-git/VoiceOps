@@ -1,0 +1,10 @@
+TRANSCRIPT ID: trans_ambiguous_001
+TIMESTAMP: 2025-12-19T18:20:00+01:00
+DURATION: 12 seconds
+LANGUAGE: Persian
+
+TRANSCRIPT:
+"یه مشکلی هست… بعضی وقتا سیستم کند می‌شه، دقیق نمی‌دونم از کی شروع شده. فعلاً فقط چند نفر گفتن صفحه دیر لود می‌شه."
+
+EXPECTED OUTPUT: See demo_scenario_2_ambiguous.json
+

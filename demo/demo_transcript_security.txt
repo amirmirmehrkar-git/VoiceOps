@@ -1,14 +1,9 @@
-TRANSCRIPT ID: trans_abc123
-TIMESTAMP: 2025-01-27T14:30:00Z
-DURATION: 12 seconds
+TRANSCRIPT ID: trans_security_001
+TIMESTAMP: 2025-12-19T18:15:00+01:00
+DURATION: 15 seconds
+LANGUAGE: Persian
 
 TRANSCRIPT:
-"We have a security breach. Unauthorized access detected at 2:30 PM. Affecting user database. High priority. Need immediate response. Contact security team."
+"یک لاگین مشکوک شناسایی شد. کاربر admin از IP غیرمعمول وارد شده. احتمال نشت توکن وجود داره. باید فوری بررسی بشه."
 
-PROCESSED FIELDS:
-- Category: SECURITY
-- Severity: HIGH
-- Affected Systems: user_database
-- Timestamp: 2025-01-27T14:30:00Z
-- Priority: P1
-
+EXPECTED OUTPUT: See demo_scenario_4_security.json

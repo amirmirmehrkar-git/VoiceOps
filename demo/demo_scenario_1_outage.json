@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "channel": "voice",
+    "vendor": "vapi",
+    "call_id": "call_demo_outage_001"
+  },
+  "occurred_at": "2025-12-19T18:05:00+01:00",
+  "reported_at": "2025-12-19T18:08:00+01:00",
+  "timezone": "Europe/Berlin",
+  "title": "Checkout API returning 500 errors in production",
+  "summary": "After a new deploy, checkout-api in production is returning HTTP 500 and customers cannot complete payments. Payments database timeouts are suspected and immediate triage is needed.",
+  "category": "service_outage",
+  "severity": "sev1",
+  "status": "new",
+  "location": {
+    "site": "unknown"
+  },
+  "systems": [
+    {
+      "name": "checkout-api",
+      "component": "payments",
+      "environment": "prod"
+    }
+  ],
+  "impact": {
+    "services_down": true,
+    "users_affected_estimate": 0
+  },
+  "evidence": {
+    "error_codes": ["HTTP_500", "DB_TIMEOUT"]
+  },
+  "tags": ["prod", "checkout", "payments"],
+  "pii": {
+    "contains_pii": false,
+    "redaction_applied": false
+  },
+  "confidence": 0.88
+}
+

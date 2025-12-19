@@ -1,0 +1,24 @@
+Must output ONE JSON object that validates incident.v1.json.
+
+Required top-level fields:
+schema_version, source, occurred_at, reported_at, title, category, severity, status, location, systems, summary, confidence
+
+Enums:
+source.channel: voice|web|api|chat
+source.vendor: vapi|manual|unknown
+category: service_outage|performance_degradation|data_issue|security_incident|hardware_failure|patient_safety|process_failure|other
+severity: sev1|sev2|sev3|sev4
+status: new|triaged|mitigating|resolved
+systems[].environment: prod|staging|dev|unknown
+
+Key constraints:
+- additionalProperties=false everywhere
+- title: 8..120 chars
+- summary: 20..500 chars
+- tags items: ^[a-z0-9_-]{2,32}$
+- occurred_at/reported_at: ISO date-time
+- systems: minItems=1
+- confidence: number 0..1
+- If unknown: category=other, severity=sev3, status=new, location.site=unknown, systems=[{name:unknown,environment:unknown}]
+- If PII detected: pii.contains_pii=true and pii.redaction_applied=true and redact summary/description
+

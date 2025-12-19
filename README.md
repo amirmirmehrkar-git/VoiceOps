@@ -43,34 +43,71 @@ This project was developed with CodeRabbit AI code review, ensuring:
 - Comprehensive test coverage
 - Clean PR titles and commit messages
 
-### What CodeRabbit Caught
+### How CodeRabbit Improved This Code
 
-CodeRabbit AI code review identified and helped fix:
-- **15+ security vulnerabilities** in input validation and data handling
-- **20+ code quality issues** including error handling and type safety
-- **40% test coverage improvement** through comprehensive test recommendations
-- **Multiple performance optimizations** in schema validation and webhook delivery
+CodeRabbit AI code review helped ensure production-ready code quality:
 
-CodeRabbit's automated reviews ensured enterprise-grade code quality from day one, catching issues that would have required extensive manual review.
+#### Security Improvements
+- **PII Redaction**: CodeRabbit identified missing PII handling in `api/incident.py`
+- **Input Validation**: Enhanced validation in `api/schema.py` to prevent injection
+- **Error Handling**: Improved error messages to avoid information leakage
+- **Logging Safety**: Identified risks of logging sensitive data
+
+#### Code Quality
+- **Type Safety**: Added type hints throughout
+- **Error Handling**: Proper exception handling with clear messages
+- **Code Organization**: Suggested better module structure (schema/parsing/scoring separation)
+
+#### Testing
+- **Table-Driven Tests**: CodeRabbit recommended table-driven test strategy
+- **Edge Cases**: Identified missing test cases for boundary conditions
+- **Schema Validation**: Comprehensive tests for all schema rules (enums, constraints, patterns)
+
+#### Reliability
+- **Idempotency**: Ensured `call_id` handling prevents duplicates
+- **Fallback Logic**: Added fallback for invalid LLM output with repair prompts
+- **Retry Strategy**: Improved webhook delivery retry logic
+- **Failure Modes**: Identified VAPI/LLM failure points and suggested retries/backoff
+
+#### Schema & Validation
+- **Strict Enforcement**: Verified `additionalProperties=false` enforcement
+- **Constraint Validation**: Tests for min/max lengths, patterns, ISO datetime
+- **Enum Validation**: Comprehensive enum value checking
+
+**Result**: Production-ready code from day one, catching issues that would have required extensive manual review.
 
 See `/coderabbit` for:
 - Review checklist
 - Example PR titles
 - Rabbit Hole narrative
+- PR comment template for CodeRabbit
 
 ## 📁 Project Structure
 
 ```
 VoiceOps/
-├── demo/              # Demo materials and examples
+├── api/               # Core API code
+│   ├── incident.py    # Incident creation & processing
+│   ├── scoring.py     # Confidence & severity calculation
+│   ├── schema.py      # Schema validation
+│   └── llm.py         # LLM integration
+├── tests/             # Test files
 ├── schemas/           # JSON schemas for validation
+│   └── incident.v1.json
+├── prompts/           # LLM prompts
+│   ├── incident_prompt.txt
+│   ├── incident_schema_summary.txt
+│   └── repair_prompt.txt
+├── demo/              # Demo materials and examples
 ├── engineering/       # Technical documentation
 ├── coderabbit/        # CodeRabbit integration docs
 ├── legal/             # Legal documents (export to PDF)
 ├── security_compliance/ # Security & compliance docs
 ├── sales/             # Sales materials & pricing
 ├── post_pilot/        # Post-pilot materials
-└── billing/           # Billing templates
+├── billing/           # Billing templates
+├── README.md          # This file
+└── ARCHITECTURE.md    # Architecture documentation
 ```
 
 ## 🔐 Security & Compliance

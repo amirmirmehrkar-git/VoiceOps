@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "channel": "voice",
+    "vendor": "vapi",
+    "call_id": "call_demo_security_001"
+  },
+  "occurred_at": "2025-12-19T18:15:00+01:00",
+  "reported_at": "2025-12-19T18:16:00+01:00",
+  "timezone": "Europe/Berlin",
+  "title": "Suspicious login detected with potential token leak",
+  "summary": "Suspicious admin login from unusual IP detected. Potential token leak suspected. Immediate security review and investigation required.",
+  "category": "security_incident",
+  "severity": "sev1",
+  "status": "new",
+  "location": {
+    "site": "unknown"
+  },
+  "systems": [
+    {
+      "name": "authentication-service",
+      "environment": "prod"
+    }
+  ],
+  "impact": {
+    "users_affected_estimate": 0
+  },
+  "tags": ["security", "authentication", "suspicious_login"],
+  "pii": {
+    "contains_pii": false,
+    "redaction_applied": false
+  },
+  "confidence": 0.85
+}
+

@@ -1,15 +1,9 @@
-TRANSCRIPT ID: trans_xyz789
-TIMESTAMP: 2025-01-27T10:15:00Z
-DURATION: 18 seconds
+TRANSCRIPT ID: trans_outage_001
+TIMESTAMP: 2025-12-19T18:05:00+01:00
+DURATION: 25 seconds
+LANGUAGE: Persian
 
 TRANSCRIPT:
-"Service outage. Payment processing is down. Started around 10 AM. All transactions failing. Critical impact. Customers can't complete purchases. Need urgent fix."
+"سلام، از ساعت ۱۸:۰۵ بعد از دیپلوی جدید، checkout-api توی پروداکشن ۵۰۰ می‌دهد. مشتری‌ها نمی‌تونن پرداخت کنن. فکر کنم دیتابیس payments timeout می‌ده. لطفاً فوری رسیدگی کنید."
 
-PROCESSED FIELDS:
-- Category: OUTAGE
-- Severity: CRITICAL
-- Affected Systems: payment_processing
-- Timestamp: 2025-01-27T10:15:00Z
-- Priority: P0
-- Impact: All payment transactions failing
-
+EXPECTED OUTPUT: See demo_scenario_1_outage.json

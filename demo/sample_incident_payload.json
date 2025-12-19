@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "source": { "channel": "voice", "vendor": "vapi", "call_id": "call_123" },
+  "occurred_at": "2025-12-19T18:07:00+01:00",
+  "reported_at": "2025-12-19T18:08:12+01:00",
+  "title": "Production API returning 500s on checkout",
+  "summary": "Checkout requests started failing with HTTP 500 after deploy. Impact seems high and ongoing.",
+  "category": "service_outage",
+  "severity": "sev1",
+  "status": "new",
+  "location": { "site": "Hamburg - Core DC", "floor": "N/A" },
+  "systems": [{ "name": "checkout-api", "component": "payments", "environment": "prod" }],
+  "impact": { "users_affected_estimate": 1200, "services_down": true },
+  "tags": ["prod", "payments", "checkout"],
+  "pii": { "contains_pii": false, "redaction_applied": false },
+  "confidence": 0.86
+}
+

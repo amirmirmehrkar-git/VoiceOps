@@ -1,0 +1,12 @@
+TRANSCRIPT ID: trans_pii_001
+TIMESTAMP: 2025-12-19T18:30:00+01:00
+DURATION: 18 seconds
+LANGUAGE: Persian
+
+TRANSCRIPT:
+"من علی رضایی هستم، شماره‌ام ۰۹۱۲۳۴۵۶۷۸۹. بیمار آقای محمدی توی اتاق ۳۱۲ بعد از قطع شدن مانیتور علائم حیاتی، چند دقیقه بدون ثبت ضربان بود. لطفاً سریع پیگیری کنید."
+
+NOTE: Contains PII (names, phone number, patient identifier)
+EXPECTED OUTPUT: See demo_scenario_3_pii.json
+PII REDACTION: Names and phone numbers should be replaced with [REDACTED]
+

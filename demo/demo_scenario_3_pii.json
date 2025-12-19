@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "channel": "voice",
+    "vendor": "vapi",
+    "call_id": "call_demo_pii_001"
+  },
+  "occurred_at": "2025-12-19T18:30:00+01:00",
+  "reported_at": "2025-12-19T18:31:00+01:00",
+  "timezone": "Europe/Berlin",
+  "title": "Vital signs monitor interruption with potential patient safety risk",
+  "summary": "A vital signs monitoring interruption was reported with potential patient safety impact. Reporter and patient identifiers were removed as [REDACTED]. Immediate triage and safety review are required.",
+  "category": "patient_safety",
+  "severity": "sev1",
+  "status": "new",
+  "location": {
+    "site": "unknown",
+    "room": "312"
+  },
+  "systems": [
+    {
+      "name": "vital-signs-monitor",
+      "environment": "unknown"
+    }
+  ],
+  "impact": {
+    "patient_safety_risk": true,
+    "services_down": false,
+    "users_affected_estimate": 1
+  },
+  "tags": ["patient_safety", "monitoring"],
+  "pii": {
+    "contains_pii": true,
+    "redaction_applied": true
+  },
+  "confidence": 0.8
+}
+

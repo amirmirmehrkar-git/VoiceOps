@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "channel": "voice",
+    "vendor": "vapi",
+    "call_id": "call_demo_ambiguous_001"
+  },
+  "occurred_at": "2025-12-19T18:20:00+01:00",
+  "reported_at": "2025-12-19T18:20:00+01:00",
+  "timezone": "Europe/Berlin",
+  "title": "Intermittent slowness reported by some users",
+  "summary": "Some users report that pages load slowly at times, but the start time and affected components are unclear. Further triage is required to identify scope and root cause.",
+  "category": "performance_degradation",
+  "severity": "sev3",
+  "status": "new",
+  "location": {
+    "site": "unknown"
+  },
+  "systems": [
+    {
+      "name": "unknown",
+      "environment": "unknown"
+    }
+  ],
+  "tags": ["performance", "slow"],
+  "pii": {
+    "contains_pii": false,
+    "redaction_applied": false
+  },
+  "confidence": 0.62
+}
+

@@ -1,0 +1,12 @@
+You produced JSON that does NOT validate incident.v1.json.
+
+Fix ONLY the JSON so it validates.
+
+Return JSON only. No extra fields. Preserve meaning.
+
+Validation errors:
+{{LIST_OF_ERRORS}}
+
+Bad JSON:
+{{BAD_JSON}}
+
