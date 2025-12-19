@@ -1,0 +1,14 @@
+TRANSCRIPT ID: trans_abc123
+TIMESTAMP: 2025-01-27T14:30:00Z
+DURATION: 12 seconds
+
+TRANSCRIPT:
+"We have a security breach. Unauthorized access detected at 2:30 PM. Affecting user database. High priority. Need immediate response. Contact security team."
+
+PROCESSED FIELDS:
+- Category: SECURITY
+- Severity: HIGH
+- Affected Systems: user_database
+- Timestamp: 2025-01-27T14:30:00Z
+- Priority: P1
+

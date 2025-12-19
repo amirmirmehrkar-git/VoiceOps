@@ -1,0 +1,48 @@
+{
+  "incident_id": "INC-2025-001",
+  "timestamp": "2025-01-27T14:30:00Z",
+  "reported_by": "voice_user_123",
+  "severity": "HIGH",
+  "category": "SECURITY",
+  "title": "Unauthorized Access Detected",
+  "description": "Security breach detected. Unauthorized access to user database at 2:30 PM. Potential data exposure.",
+  "affected_systems": [
+    "user_database",
+    "authentication_service"
+  ],
+  "impact": {
+    "users_affected": "unknown",
+    "data_breach": true,
+    "service_degradation": false
+  },
+  "status": "OPEN",
+  "priority": "P1",
+  "assignee": null,
+  "tags": [
+    "security",
+    "breach",
+    "database",
+    "unauthorized-access"
+  ],
+  "metadata": {
+    "source": "voice",
+    "transcript_id": "trans_abc123",
+    "processing_time_ms": 1250,
+    "schema_version": "1.0"
+  },
+  "webhook_deliveries": [
+    {
+      "target": "jira",
+      "status": "delivered",
+      "ticket_id": "JIRA-1234",
+      "delivered_at": "2025-01-27T14:30:02Z"
+    },
+    {
+      "target": "pagerduty",
+      "status": "delivered",
+      "incident_id": "PD-5678",
+      "delivered_at": "2025-01-27T14:30:02Z"
+    }
+  ]
+}
+

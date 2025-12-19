@@ -1,0 +1,66 @@
+پاورپوینت‌ها
+1️⃣ Pre-Seed / Seed Investor Deck
+
+👉
+VoiceOps_Seed_Deck.pptx
+
+مناسب برای:
+
+Angels
+
+Accelerators
+
+Pre-seed / Seed VCs
+
+تمرکز: Problem → Solution → Market → Business Model → Vision
+
+2️⃣ Healthcare-Focused Investor Deck
+
+👉
+VoiceOps_Healthcare_Deck.pptx
+
+مناسب برای:
+
+HealthTech VCs
+
+Hospital innovation teams
+
+Digital health accelerators
+
+تمرکز:
+
+Safety incidents
+
+Compliance mindset
+
+Risk reduction & auditability
+
+3️⃣ Security / Compliance Investor Deck
+
+👉
+VoiceOps_Security_Deck.pptx
+
+مناسب برای:
+
+Security-focused VCs
+
+Infra / DevOps funds
+
+Enterprise SaaS investors
+
+تمرکز:
+
+Incident response
+
+Deterministic behavior
+
+SOC2-aligned controls
+
+🎯 چطور هرکدام را Pitch کنی (خیلی مهم)
+Seed Deck (۲–۳ دقیقه)
+
+اسلاید 1 → 2 → 3 → 4 → 6
+
+جمله کلیدی:
+
+“We fix the first incident report — everything downstream depends on it.”

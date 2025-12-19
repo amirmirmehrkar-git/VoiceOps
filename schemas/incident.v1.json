@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VoiceOps Incident Schema v1.0",
+  "description": "Production-ready incident schema for voice-to-JSON conversion",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "timestamp",
+    "severity",
+    "category",
+    "title",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]{4}-[0-9]{3}$",
+      "description": "Unique incident identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of incident report"
+    },
+    "reported_by": {
+      "type": "string",
+      "description": "Identifier of person/system reporting"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+      "description": "Incident severity level"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["SECURITY", "OUTAGE", "PERFORMANCE", "DATA", "OTHER"],
+      "description": "Incident category"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 200,
+      "description": "Short incident title"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Detailed incident description"
+    },
+    "affected_systems": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of affected systems/services"
+    },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "users_affected": {
+          "type": ["string", "number"],
+          "description": "Number or description of affected users"
+        },
+        "data_breach": {
+          "type": "boolean"
+        },
+        "service_degradation": {
+          "type": "boolean"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["OPEN", "IN_PROGRESS", "RESOLVED", "CLOSED"],
+      "default": "OPEN"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["P0", "P1", "P2", "P3"],
+      "description": "Priority level (P0 = highest)"
+    },
+    "assignee": {
+      "type": ["string", "null"],
+      "description": "Assigned team/person"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["voice", "web", "api"]
+        },
+        "transcript_id": {
+          "type": "string"
+        },
+        "processing_time_ms": {
+          "type": "number"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      }
+    },
+    "webhook_deliveries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "ticket_id": {
+            "type": "string"
+          },
+          "delivered_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
+

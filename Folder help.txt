@@ -1,0 +1,59 @@
+This ZIP includes:
+
+📁 Structured folders (ready to use)
+
+legal/
+
+Pilot Terms (Markdown)
+
+Order Form (Markdown)
+
+security_compliance/
+
+Security FAQ (Markdown)
+
+📄 Ready-to-send PDFs
+
+Pilot_Terms.pdf
+
+Security_FAQ.pdf
+
+Order_Form.pdf
+
+These PDFs are exactly what you attach for:
+
+pilots
+
+procurement
+
+security review
+
+first paid customer
+
+How to use this immediately
+
+For pilots / customers
+
+Send:
+
+Pilot_Terms.pdf
+
+Security_FAQ.pdf
+
+Order_Form.pdf
+
+For Notion / internal
+
+Paste the .md files into Notion pages (Legal, Security)
+
+For hackathon / judges
+
+Keep the ZIP locally as proof you’ve thought through:
+
+compliance
+
+security
+
+go-to-market
+
+real SaaS readiness

@@ -1,0 +1,61 @@
+# VoiceOps .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+*.temp
+install.sh
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# PDFs (if they contain sensitive info)
+# Uncomment if needed:
+# *.pdf
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node modules (if any)
+node_modules/
+package-lock.json
+
+# Python (if any)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# Build outputs
+dist/
+build/
+*.exe
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Personal notes
+notes.txt
+TODO.txt
+

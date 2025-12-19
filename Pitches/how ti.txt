@@ -1,0 +1,55 @@
+این دک دقیقاً برای چه کسی است؟
+
+این نسخه مناسب است برای:
+
+👔 Angel investors
+
+🚀 Accelerators / Demo Days
+
+🧠 VCهایی که روی Infra / DevOps / Health / Security سرمایه‌گذاری می‌کنند
+
+نه هکاتونی، نه شلوغ، نه buzzword-heavy
+کاملاً سرمایه‌گذارپسند و قابل دفاع.
+
+ساختار دک (Investor Logic)
+
+Title
+VoiceOps + tagline واضح
+
+Problem
+Pain واقعی + قابل تعمیم
+
+Solution
+Differentiated (voice + structure + determinism)
+
+How It Works
+Technical enough, not scary
+
+Why It Wins
+Moat: schema-first + safety-first
+
+Market & ICP
+Who pays, who owns the problem
+
+Business Model
+SaaS, predictable, pilot → revenue
+
+Vision
+Infrastructure-level ambition (VC-friendly)
+
+چطور ازش استفاده کنی (Pro Tips)
+اگر 2 دقیقه وقت داری:
+
+اسلاید 1 → 5 → 8
+
+اگر 5 دقیقه وقت داری:
+
+اسلاید 1 → 3 → 4 → 6 → 7 → 8
+
+اگر سؤال فنی شد:
+
+اسلاید 4 و 5 را باز کن
+
+بگو:
+
+“AI doesn’t decide severity — rules do.”

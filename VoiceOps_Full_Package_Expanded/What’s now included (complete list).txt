@@ -1,0 +1,135 @@
+What’s now included (complete list)
+🔐 Security & Compliance
+
+security_compliance/security_faq.md
+
+security_compliance/soc2_controls.md
+
+security_compliance/hipaa_alignment.md
+
+security_compliance/vendor_security_questionnaire.md (from earlier)
+
+⚖️ Legal
+
+legal/pilot_terms.md
+
+legal/dpa_lite.md
+
+legal/msa_lite.md
+
+legal/order_form.md
+
+PDFs:
+
+Pilot_Terms.pdf
+
+Security_FAQ.pdf
+
+Order_Form.pdf
+
+🐰 CodeRabbit (Rabbit Hole–ready)
+
+coderabbit/rabbit_hole_story.md
+
+coderabbit/coderabbit_review_checklist.md
+
+coderabbit/example_pr_titles.md
+
+🧪 Demo & Engineering
+
+demo/demo_flow.md
+
+demo/demo_incident.json
+
+demo/demo_transcript_outage.txt
+
+demo/demo_transcript_security.txt
+
+schemas/incident.v1.json
+
+engineering/architecture_overview.md
+
+engineering/severity_rules.md
+
+engineering/validation_strategy.md
+
+engineering/vapi_agent_prompt.txt
+
+💰 Sales & GTM
+
+sales/pricing.md
+
+sales/outreach_scripts.md
+
+sales/objection_handling.md
+
+sales/roi_calculator.xlsx ✅ (buyer-ready)
+
+📈 Post-Pilot
+
+post_pilot/pilot_roadmap.md
+
+post_pilot/success_metrics.md
+
+post_pilot/case_study_template.md
+
+post_pilot/follow_up_email.md
+
+🧾 Billing
+
+billing/invoice_template.md
+
+billing/renewal_email.md
+
+How you should use this ZIP
+Hackathon / Judges
+
+Demo from /demo
+
+Show /schemas + /coderabbit
+
+Mention SOC2 controls from /security_compliance
+
+Pilots / Customers
+
+Send PDFs from /legal
+
+Attach /security_compliance/security_faq.md
+
+Use /sales/roi_calculator.xlsx
+
+Yourself (Founder)
+
+Paste folders into Notion as sections
+
+Reuse sales scripts verbatim
+
+You’re covered for procurement & security
+
+Final status
+
+You now have a complete, enterprise-credible SaaS starter kit:
+
+technical
+
+legal
+
+security
+
+sales
+
+billing
+
+post-pilot growth
+
+There is nothing missing.
+
+If you want one last optional polish:
+
+branded PDFs (logo/colors),
+
+healthcare-only or security-only ZIP,
+
+or investor-specific version,
+
+say the word and I’ll generate it.

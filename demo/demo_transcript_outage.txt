@@ -1,0 +1,15 @@
+TRANSCRIPT ID: trans_xyz789
+TIMESTAMP: 2025-01-27T10:15:00Z
+DURATION: 18 seconds
+
+TRANSCRIPT:
+"Service outage. Payment processing is down. Started around 10 AM. All transactions failing. Critical impact. Customers can't complete purchases. Need urgent fix."
+
+PROCESSED FIELDS:
+- Category: OUTAGE
+- Severity: CRITICAL
+- Affected Systems: payment_processing
+- Timestamp: 2025-01-27T10:15:00Z
+- Priority: P0
+- Impact: All payment transactions failing
+
