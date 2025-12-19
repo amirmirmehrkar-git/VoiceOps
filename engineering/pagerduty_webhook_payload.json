@@ -1,0 +1,25 @@
+{
+  "routing_key": "YOUR_PAGERDUTY_INTEGRATION_KEY",
+  "event_action": "trigger",
+  "dedup_key": "{{incident.incident_id}}",
+  "payload": {
+    "summary": "{{incident.title}}",
+    "source": "VoiceOps",
+    "severity": "{{incident.severity}}",
+    "custom_details": {
+      "incident_id": "{{incident.incident_id}}",
+      "category": "{{incident.category}}",
+      "affected_systems": "{{incident.affected_systems}}",
+      "reported_by": "{{incident.reported_by}}",
+      "timestamp": "{{incident.timestamp}}",
+      "description": "{{incident.description}}"
+    }
+  },
+  "links": [
+    {
+      "href": "https://voiceops.com/incidents/{{incident.incident_id}}",
+      "text": "View in VoiceOps"
+    }
+  ]
+}
+

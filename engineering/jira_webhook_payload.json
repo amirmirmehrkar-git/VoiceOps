@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "project": {
+      "key": "VO"
+    },
+    "summary": "{{incident.title}}",
+    "description": "{{incident.description}}\n\n**Severity**: {{incident.severity}}\n**Category**: {{incident.category}}\n**Affected Systems**: {{incident.affected_systems}}\n**Reported At**: {{incident.timestamp}}",
+    "issuetype": {
+      "name": "Incident"
+    },
+    "priority": {
+      "name": "{{incident.priority}}"
+    },
+    "labels": {{incident.tags}},
+    "customfield_10001": "{{incident.incident_id}}",
+    "customfield_10002": "{{incident.reported_by}}"
+  }
+}
+
