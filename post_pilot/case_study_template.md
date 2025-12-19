@@ -1,105 +1,74 @@
-# VoiceOps Case Study Template
+# Case Study Template (Pilot → Proof → Revenue)
 
-## [Company Name] Case Study
-
-**Industry**: [Industry]
-**Size**: [Number of employees]
-**Use Case**: [Primary use case]
-**Results**: [Key results]
+Use this after your first pilot. This converts interest into sales.
 
 ---
 
-## The Challenge
+## Case Study: {{Customer Name}}
 
-[Company] faced [specific challenge]:
-- [Challenge 1]
-- [Challenge 2]
-- [Challenge 3]
-
-**Impact**:
-- [Quantified impact, e.g., "10 minutes per incident × 100 incidents = 16+ hours/month lost"]
+**Industry**: DevOps / Healthcare / Security
 
 ---
 
-## The Solution: VoiceOps
+## 🚨 Problem
 
-[Company] implemented VoiceOps to:
-- [Solution benefit 1]
-- [Solution benefit 2]
-- [Solution benefit 3]
+**Before VoiceOps**:
 
-**Implementation**:
-- Pilot duration: [X weeks]
-- Integration: [Jira/PagerDuty]
-- Team size: [X users]
+- Incident reports were **slow and unstructured**
+- Severity often **misclassified**
+- Teams lost time **cleaning up first reports**
 
 ---
 
-## Results
+## 💡 Solution
 
-### Quantitative Results
+VoiceOps was deployed as a **voice-first incident intake layer**:
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Time to ticket | [X] minutes | [Y] seconds | [Z]% faster |
-| Accuracy | [X]% | [Y]% | [Z]% improvement |
-| Incidents/month | [X] | [Y] | [Z]% increase |
-| Error rate | [X]% | [Y]% | [Z]% reduction |
-
-### Qualitative Results
-
-- [Quote from user]
-- [Quote from manager]
-- [Quote from executive]
+- **4 fixed questions**
+- **Deterministic severity**
+- **Strict schema validation**
+- **Direct integration** with {{Jira / PagerDuty}}
 
 ---
 
-## ROI
+## ⚙️ Implementation
 
-**Investment**: $X/month
-**Value Created**: $Y/month
-**ROI**: [Z]x return
-
-**Breakdown**:
-- Time savings: $[A]/month
-- Error reduction: $[B]/month
-- Faster response: $[C]/month
+- **Pilot duration**: {{weeks}}
+- **Teams onboarded**: {{number}}
+- **Incidents processed**: {{number}}
 
 ---
 
-## Key Takeaways
+## 📊 Results
 
-1. [Takeaway 1]
-2. [Takeaway 2]
-3. [Takeaway 3]
+- ⬇️ **Time to first report**: {{%}}
+- ⬆️ **Correct severity on first report**: {{%}}
+- ⬇️ **Manual cleanup required**: {{%}}
 
----
+**Customer quote**:
 
-## What's Next
-
-[Company] plans to:
-- [Future plan 1]
-- [Future plan 2]
-- [Future plan 3]
+> "The first incident report was finally usable."
 
 ---
 
-## Quote
+## 🚀 Outcome
 
-"[Compelling quote from customer about VoiceOps impact]"
-
-— [Name], [Title], [Company]
-
----
-
-## Approval
-
-- [ ] Customer approved for publication
-- [ ] Logo usage approved
-- [ ] Quotes approved
-- [ ] Metrics verified
+- Pilot **converted to paid usage**
+- Expanded to {{additional teams / boards}}
 
 ---
 
-**Note**: Fill in brackets with actual customer data. Get approval before publishing.
+## 🔑 Key Takeaway
+
+**Enforcing structure at intake changed how incidents were handled downstream.**
+
+---
+
+## 🧠 Final Universal Close
+
+**"Voice is the input. Production-grade incidents are the output."**
+
+---
+
+**Note**: Fill in {{brackets}} with actual customer data. Get approval before publishing.
 

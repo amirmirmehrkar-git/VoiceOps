@@ -3,6 +3,7 @@
   "title": "VoiceOps Incident Schema v1.0",
   "description": "Production-ready incident schema for voice-to-JSON conversion",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "incident_id",
     "timestamp",
@@ -13,6 +14,10 @@
     "status"
   ],
   "properties": {
+    "call_id": {
+      "type": "string",
+      "description": "Unique call identifier for idempotency"
+    },
     "incident_id": {
       "type": "string",
       "pattern": "^INC-[0-9]{4}-[0-9]{3}$",

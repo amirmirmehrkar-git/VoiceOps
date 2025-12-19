@@ -1,51 +1,70 @@
 # VoiceOps Pilot Terms (Non-Binding)
 
-**Effective Date**: [Date]
-**Pilot Duration**: 2-3 weeks
-**Status**: Non-binding evaluation period
+**Send this as a PDF or Notion page**
 
-## 1. Pilot Scope
+---
 
-- Access to VoiceOps platform
-- Voice-to-incident conversion for up to 100 incidents
-- Integration with one Jira project or PagerDuty service
-- Email support during business hours
+## 🎯 Purpose
 
-## 2. Data & Privacy
+Evaluate VoiceOps as a voice-first incident ingestion service in a real operational environment.
 
-- All data processed during pilot is encrypted
-- Data retention: 30 days post-pilot
-- No data sharing with third parties
-- Full data deletion available upon request
+---
 
-## 3. Support
+## ⏱️ Duration
 
-- Email support: support@voiceops.com
-- Response time: 24-48 hours
-- Documentation provided
-- Demo session available
+**2–3 weeks**
 
-## 4. Limitations
+Pilot start date: {{date}}
 
-- No SLA during pilot
-- Limited to 100 incidents
-- Single integration only
-- No custom development
+---
 
-## 5. Post-Pilot
+## 👥 Scope
 
-- Option to convert to paid plan
-- Data export available
-- No obligation to purchase
+- **1 team**
+- **Real incidents only**
+- **Voice intake via VoiceOps**
+- **Export via webhook / API** (Jira, PagerDuty, etc.)
 
-## 6. Confidentiality
+---
 
-- Both parties maintain confidentiality
-- No public case study without approval
-- Feedback welcome but optional
+## 🔐 Data & Safety
 
-## Acceptance
+- **No raw audio stored** beyond intake
+- **PII redacted** at intake
+- **Incident data isolated** per team
+- **Pilot data deleted** on request
 
-By using VoiceOps during the pilot, you acknowledge these terms.
+---
 
-**Note**: This is a non-binding evaluation. No payment required.
+## 📊 Success Criteria
+
+Pilot considered successful if **any one is true**:
+
+- ✅ **Faster first incident report**
+- ✅ **More accurate severity classification**
+- ✅ **Less downstream cleanup**
+
+---
+
+## 💰 Commercial Terms
+
+- **Pilot is free**
+- **No obligation to convert**
+- **Optional paid continuation** after pilot
+
+---
+
+## 📞 Support
+
+- **Async support** during pilot
+- **Weekly 15-minute check-in** (optional)
+
+---
+
+## ✍️ Signature
+
+This pilot is non-binding and for evaluation only.
+
+---
+
+**Voice is the input. Production-grade incidents are the output.**
