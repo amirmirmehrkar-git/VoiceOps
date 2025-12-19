@@ -44,7 +44,7 @@ def create_incident_from_transcript(
         incident = call_llm_for_incident(transcript, call_id)
     except NotImplementedError:
         # Fallback for development/testing
-        incident = _create_fallback_incident(transcript, call_id, timezone)
+        incident = _create_fallback_incident(transcript, call_id, timezone or "Europe/Berlin")
     
     # Step 2: Validate against full schema file
     errors = validate_incident(incident)
@@ -69,7 +69,7 @@ def create_incident_from_transcript(
 def _create_fallback_incident(
     transcript: str,
     call_id: Optional[str],
-    timezone: str
+    timezone_str: str
 ) -> Dict:
     """Fallback incident creation for development/testing."""
     now = datetime.now(timezone.utc).isoformat()
@@ -84,7 +84,7 @@ def _create_fallback_incident(
         },
         "occurred_at": now,
         "reported_at": now,
-        "timezone": timezone,
+        "timezone": timezone_str,
         "title": transcript[:120] if len(transcript) >= 8 else "Incident reported via voice",
         "summary": transcript[:500] if len(transcript) >= 20 else "Incident reported. Details to be confirmed.",
         "category": "other",
