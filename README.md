@@ -98,14 +98,14 @@ VoiceOps/
 │   ├── incident_prompt.txt
 │   ├── incident_schema_summary.txt
 │   └── repair_prompt.txt
-├── demo/              # Demo materials and examples
+├── demo/              # ----
 ├── engineering/       # Technical documentation
 ├── coderabbit/        # CodeRabbit integration docs
-├── legal/             # Legal documents (export to PDF)
+├── legal/             # ----
 ├── security_compliance/ # Security & compliance docs
-├── sales/             # Sales materials & pricing
+├── sales/             # --
 ├── post_pilot/        # Post-pilot materials
-├── billing/           # Billing templates
+├── billing/           # -----
 ├── README.md          # This file
 └── ARCHITECTURE.md    # Architecture documentation
 ```
