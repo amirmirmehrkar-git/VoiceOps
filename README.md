@@ -1,8 +1,8 @@
 # VoiceOps
 
-**Voice is the input. Production-grade incidents are the output.**
+**Development prototype for voice-to-incident extraction.**
 
-VoiceOps is an enterprise-ready voice-first incident ingestion system that transforms spoken reports into structured, production-grade incident records.
+VoiceOps is a development prototype for converting voice transcripts into structured incident records. The LLM provider and downstream integrations are not implemented in the current main branch.
 
 ## 🎯 What VoiceOps Does
 
@@ -112,3 +112,24 @@ VoiceOps/
 
 
 
+
+## Reproducible local checks and current boundaries
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python -m pytest -q
+```
+
+Use Python 3.12. CI runs the same tests. The incident API fails closed when no LLM provider is configured.
+Only synthetic local demos should pass `allow_fallback=True` explicitly. The fallback is a rule-based demo,
+not a substitute for a configured provider or verified incident triage.
+UTC timestamps retain the requested IANA timezone label. Unknown impact defaults to sev3; security incidents
+are escalated. Explicitly negated urgency does not override independent outage evidence.
+
+PII filtering covers basic email, phone and labelled patient-name patterns before the provider call.
+It is incomplete: do not use real patient data or claim HIPAA/GDPR/SOC2 compliance from these tests.
+A production integration requires reviewed privacy controls, retention, access control, provider configuration,
+authentication and integration tests. Existing marketing/compliance documents describe goals, not certification.
+No project reuse license has been selected.

@@ -4,20 +4,22 @@ VoiceOps Incident API
 Handles incident creation, validation, and processing.
 """
 
-import json
-from datetime import datetime, timezone
+import re
+from datetime import datetime, timezone as datetime_timezone
 from typing import Dict, Optional
 from uuid import uuid4
 
 from .schema import validate_incident_strict, validate_incident
-from .scoring import calculate_confidence
+from .scoring import calculate_confidence, classify_severity
 from .llm import call_llm_for_incident, validate_and_repair
 
 
 def create_incident_from_transcript(
     transcript: str,
     call_id: Optional[str] = None,
-    timezone: str = "Europe/Berlin"
+    timezone: str = "Europe/Berlin",
+    *,
+    allow_fallback: bool = False
 ) -> Dict:
     """
     Create an incident from a voice transcript.
@@ -39,12 +41,22 @@ def create_incident_from_transcript(
     Raises:
         ValueError: If incident cannot be created or validated
     """
+    # Redact supported PII patterns before any provider call. This is a demo
+    # safeguard, not comprehensive PII detection or a compliance guarantee.
+    transcript, had_pii = redact_pii(transcript)
     # Step 1: Call LLM with optimized prompt (schema summary only)
     try:
         incident = call_llm_for_incident(transcript, call_id)
     except NotImplementedError:
+        if not allow_fallback:
+            raise RuntimeError("LLM provider is not configured; demo fallback requires allow_fallback=True") from None
         # Fallback for development/testing
         incident = _create_fallback_incident(transcript, call_id, timezone)
+
+    incident["pii"] = {
+        "contains_pii": had_pii or incident.get("pii", {}).get("contains_pii", False),
+        "redaction_applied": had_pii or incident.get("pii", {}).get("redaction_applied", False)
+    }
     
     # Step 2: Validate against full schema file
     errors = validate_incident(incident)
@@ -72,9 +84,9 @@ def _create_fallback_incident(
     timezone: str
 ) -> Dict:
     """Fallback incident creation for development/testing."""
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(datetime_timezone.utc).isoformat()
     
-    return {
+    incident = {
         "schema_version": "1.0.0",
         "incident_id": str(uuid4()),
         "source": {
@@ -107,6 +119,15 @@ def _create_fallback_incident(
         "confidence": 0.5
     }
 
+    text = transcript.lower()
+    if re.search(r"\b(security breach|unauthorized access|data exposure)\b", text):
+        incident["category"] = "security_incident"
+    elif re.search(r"\b(down|outage|offline|not working)\b", text):
+        incident["category"] = "service_outage"
+        incident["impact"] = {"services_down": True}
+    incident["severity"] = classify_severity(incident, transcript)
+    return incident
+
 
 def redact_pii(text: str) -> tuple[str, bool]:
     """
@@ -118,7 +139,16 @@ def redact_pii(text: str) -> tuple[str, bool]:
     Returns:
         Tuple of (redacted_text, had_pii)
     """
-    # TODO: Implement PII detection and redaction
-    # This is where CodeRabbit would help identify security issues
-    return text, False
+    # Deliberately limited patterns; do not claim to detect every name/address.
+    patterns = [
+        r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
+        r"(?<!\w)(?:\+\d{1,3}[ .-]?)?(?:\(?\d{2,4}\)?[ .-])?\d{3}[ .-]\d{4}(?!\w)",
+        r"\b[Pp]atient\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}",
+    ]
+    had_pii = False
+    for index, pattern in enumerate(patterns):
+        flags = 0 if index == 2 else re.IGNORECASE
+        text, count = re.subn(pattern, "[REDACTED]", text, flags=flags)
+        had_pii = had_pii or count > 0
+    return text, had_pii
 

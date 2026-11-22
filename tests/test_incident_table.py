@@ -99,7 +99,7 @@ def test_incident_extraction(test_case):
     expected = test_case["expected"]
     
     # Create incident from transcript
-    incident = create_incident_from_transcript(transcript)
+    incident = create_incident_from_transcript(transcript, allow_fallback=True)
     
     # Validate schema
     validate_incident_strict(incident)
@@ -201,7 +201,8 @@ def test_severity_classification():
             "incident": {
                 "category": "other"
             },
-            "expected": "sev4"
+            # Unknown impact must not be silently downgraded to minor.
+            "expected": "sev3"
         }
     ]
     

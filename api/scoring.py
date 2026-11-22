@@ -4,6 +4,7 @@ VoiceOps Scoring Module
 Calculates confidence scores and severity classification.
 """
 
+import re
 from typing import Dict
 
 
@@ -92,16 +93,20 @@ def classify_severity(incident: Dict, transcript: str = "") -> str:
         "not urgent"
     ]
     
-    # Check for critical keywords
-    has_critical_keywords = any(keyword in text for keyword in critical_keywords)
+    # Match words/phrases, not substrings (e.g. 'download' is not 'down').
+    # Suppress explicit negations without suppressing another real outage.
+    risk_text = re.sub(r"\b(?:not|non)[ -]+(?:urgent|critical)\b", "", text)
+    has_critical_keywords = any(
+        re.search(r"\b" + re.escape(keyword) + r"\b", risk_text)
+        for keyword in critical_keywords
+    )
     
     # sev1 conditions
     if impact.get("services_down") or has_critical_keywords:
         return "sev1"
     
-    if category in ["security_incident", "patient_safety"]:
-        if has_critical_keywords or impact.get("patient_safety_risk"):
-            return "sev1"
+    if category == "security_incident" or impact.get("patient_safety_risk"):
+        return "sev1"
     
     # sev2 conditions
     if category == "performance_degradation":
